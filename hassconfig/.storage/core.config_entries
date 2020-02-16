@@ -1,0 +1,42 @@
+{
+    "data": {
+        "entries": [
+            {
+                "connection_class": "cloud_poll",
+                "data": {
+                    "track_home": true
+                },
+                "domain": "met",
+                "entry_id": "2935fa753eb14a7d8c6dc98bd99a1840",
+                "options": {},
+                "source": "onboarding",
+                "system_options": {
+                    "disable_new_entities": false
+                },
+                "title": "Home",
+                "unique_id": null,
+                "version": 1
+            },
+            {
+                "connection_class": "local_push",
+                "data": {
+                    "broker": "127.0.0.1",
+                    "discovery": true,
+                    "port": 1883
+                },
+                "domain": "mqtt",
+                "entry_id": "64070b7d247242ff9a790955273ce165",
+                "options": {},
+                "source": "user",
+                "system_options": {
+                    "disable_new_entities": false
+                },
+                "title": "127.0.0.1",
+                "unique_id": null,
+                "version": 1
+            }
+        ]
+    },
+    "key": "core.config_entries",
+    "version": 1
+}

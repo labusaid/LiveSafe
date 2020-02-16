@@ -1,0 +1,14 @@
+{
+    "data": {
+        "items": [
+            {
+                "device_trackers": [],
+                "id": "live_safe",
+                "name": "Live Safe",
+                "user_id": "d6bd00be22104fb28def66ba5f863ca7"
+            }
+        ]
+    },
+    "key": "person",
+    "version": 2
+}

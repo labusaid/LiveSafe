@@ -1,0 +1,6 @@
+2020-02-16 01:56:11 WARNING (MainThread) [homeassistant.components.mqtt] Data in your config entry is going to override your configuration.yaml: {'broker': '127.0.0.1', 'discovery': True, 'port': 1883}
+2020-02-16 02:00:26 WARNING (zeroconf-ServiceBrowser__axis-video._tcp.local.) [zeroconf] Exception occurred:
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.7/site-packages/zeroconf/__init__.py", line 2589, in send
+    bytes_sent = s.sendto(packet, 0, (real_addr, port))
+OSError: [Errno 101] Network unreachable

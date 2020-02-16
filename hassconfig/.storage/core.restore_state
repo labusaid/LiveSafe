@@ -1,0 +1,26 @@
+{
+    "data": [
+        {
+            "last_seen": "2020-02-16T07:11:18.002890+00:00",
+            "state": {
+                "attributes": {
+                    "editable": true,
+                    "friendly_name": "Live Safe",
+                    "id": "live_safe",
+                    "user_id": "d6bd00be22104fb28def66ba5f863ca7"
+                },
+                "context": {
+                    "id": "9b0a503851654c29bbe07e388cec335c",
+                    "parent_id": null,
+                    "user_id": null
+                },
+                "entity_id": "person.live_safe",
+                "last_changed": "2020-02-16T06:56:11.081894+00:00",
+                "last_updated": "2020-02-16T06:56:17.933887+00:00",
+                "state": "unknown"
+            }
+        }
+    ],
+    "key": "core.restore_state",
+    "version": 1
+}
