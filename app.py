@@ -9,17 +9,6 @@ headers = {
     "Authorization": "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiI4MjgxYzRkZmQzMzU0YTdkYjFmZDU5ZDZhODRhODI4YiIsImlhdCI6MTU4MTg2MzA5NSwiZXhwIjoxODk3MjIzMDk1fQ.vBI97CKTnF4ze6f8z6KGqVDn0XVIT88wKa_gjS05wiE",
     "content-type": "application/json",
 }
-# responseSwitch = get(url, headers=headers)
-# print(responseSwitch.text)
-#
-# url = "http://192.168.8.234:8123/api/states/sensor.door"
-# headers = {
-#     "Authorization": "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiI4MjgxYzRkZmQzMzU0YTdkYjFmZDU5ZDZhODRhODI4YiIsImlhdCI6MTU4MTg2MzA5NSwiZXhwIjoxODk3MjIzMDk1fQ.vBI97CKTnF4ze6f8z6KGqVDn0XVIT88wKa_gjS05wiE",
-#     "content-type": "application/json",
-# }
-# responseDoor = get(url, headers=headers)
-# print(responseDoor.text)
-#
 responses = {"timeCount": 0, "doorCount": 0, "windowCount": 0, "smokeCount": 0}
 
 app = Flask(__name__)
@@ -61,12 +50,18 @@ def loopFunc():
     not_done = True
     while not_done == True:
         responseDoor = get(url+"sensor.door", headers=headers)
+        responseWindow = get(url+"sensor.switch", headers=headers)
+        responseSmoke = get(url+"sensor.button", headers=headers)
         print(responseDoor.text.split()[17])
         if responseDoor.text.split()[17] == "\"open\"}":
             responses['doorCount']+=1
-        responses['timeCount'] += 1
+        if responseSmoke.text.split()[17] == "\"pressed\"}":
+            responses['smokeCount']+=1
+        if responseWindow.text.split()[17]=="\"on\"}":
+            responses['windowCount']+=1
         if responses['timeCount'] >= 90:
             not_done = False
+        responses['timeCount'] += 1
         riskA.set(**responses)
         print(responses['timeCount'])
         time.sleep(1)
