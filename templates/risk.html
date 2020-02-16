@@ -3,9 +3,9 @@
 <link rel="stylesheet" href="/static/css/bootstrap.css" >
 
 {% block content %}
-    <div class = "riskDisp">{{ riskNumber }}</div>
+    <div class = "label"><h1>{{ riskNumber|round }}</h1></div>
 <form action="/" class="homeButton">
-<input type="submit" value="Home">
+<input type="submit" value="Home" class = "btn-lg col-md-offset-5 col-md-2">
 </form>
 
 {% endblock %}

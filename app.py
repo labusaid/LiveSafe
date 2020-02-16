@@ -3,6 +3,7 @@ import Risk
 from requests import get
 from threading import Thread
 import time
+import re
 
 url = "http://192.168.8.234:8123/api/states/"
 headers = {
@@ -37,8 +38,13 @@ def delete(task_id):
     except:
         return 'There was a problem deleting that task'
 
+def reword(arg):
+    finalString = capitalize(arg)
+    return re.findall('[A-Z][^A-Z]*', finalString)[0] + " " + re.findall('[A-Z][^A-Z]*', finalString)[1]
+
 
 if __name__ == '__main__':
+    app.jinja_env.filters['reword'] = reword
     app.run()
 
 @app.route('/risk')
@@ -52,7 +58,6 @@ def loopFunc():
         responseDoor = get(url+"sensor.door", headers=headers)
         responseWindow = get(url+"sensor.switch", headers=headers)
         responseSmoke = get(url+"sensor.button", headers=headers)
-        print(responseDoor.text.split()[17])
         if responseDoor.text.split()[17] == "\"open\"}":
             responses['doorCount']+=1
         if responseSmoke.text.split()[17] == "\"pressed\"}":

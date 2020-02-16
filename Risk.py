@@ -9,6 +9,7 @@ class Risk:
 # counts and days integer values
 # waterPressureFactor ???
     riskFactors = dict()
+    scale = 1/17
 
     def __init__(self):
         self.riskFactors['doorOpen'] = Factor(0, 1)
@@ -19,7 +20,7 @@ class Risk:
         risk = 0
         for i in self.riskFactors:
             risk += self.riskFactors[i].val*self.riskFactors[i].weight
-        risk=10*(-1/(risk/10+1)+1)
+        risk=10*(-1/(risk*self.scale+1)+1)
         return risk
 
     def set(self, timeCount, doorCount, smokeCount, windowCount):
