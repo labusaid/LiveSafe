@@ -26,4 +26,7 @@ sensor:
   - platform: mqtt
     name: "Door"
     state_topic: "livesafe/door"
+  - platform: mqtt
+    name: "Button"
+    state_topic: "livesafe/button"
 
