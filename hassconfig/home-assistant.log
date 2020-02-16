@@ -4,3 +4,19 @@ Traceback (most recent call last):
   File "/usr/local/lib/python3.7/site-packages/zeroconf/__init__.py", line 2589, in send
     bytes_sent = s.sendto(packet, 0, (real_addr, port))
 OSError: [Errno 101] Network unreachable
+2020-02-16 02:55:18 ERROR (MainThread) [metno] https://aa015h6buqvih86i1.api.met.no/weatherapi/locationforecast/1.9/ returned Cannot connect to host aa015h6buqvih86i1.api.met.no:443 ssl:None [Try again]
+2020-02-16 02:55:18 ERROR (MainThread) [homeassistant.components.met.weather] Retrying in 18 minutes
+2020-02-16 02:56:15 ERROR (MainThread) [homeassistant.components.updater] Could not contact Home Assistant Update to check for updates
+2020-02-16 02:56:15 ERROR (MainThread) [homeassistant.core] Error doing job: Task exception was never retrieved
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.7/site-packages/aiohttp/connector.py", line 830, in _resolve_host
+    self._resolver.resolve(host, port, family=self._family)
+  File "/usr/local/lib/python3.7/site-packages/aiohttp/resolver.py", line 30, in resolve
+    host, port, type=socket.SOCK_STREAM, family=family)
+  File "/usr/local/lib/python3.7/asyncio/base_events.py", line 788, in getaddrinfo
+    None, getaddr_func, host, port, family, type, proto, flags)
+  File "/usr/local/lib/python3.7/concurrent/futures/thread.py", line 57, in run
+    result = self.fn(*self.args, **self.kwargs)
+  File "/usr/local/lib/python3.7/socket.py", line 752, in getaddrinfo
+    for res in _socket.getaddrinfo(host, port, family, type, proto, flags):
+socket.gaierror: [Errno -3] Try again
