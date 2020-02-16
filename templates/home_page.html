@@ -1,0 +1,25 @@
+<link rel="stylesheet" href="/static/css/bootstrap.css" >
+<title>
+    State Farm
+</title>
+
+{% block content %}
+    <div class = "row">
+        <img src="/static/images/Logo.png" alt="(Main Logo)" style="width:36%;position: absolute;left:32%;">
+    </div>
+    <div class="row">
+        {% for i in range(32) %}
+            <br/>
+        {% endfor %}
+        <div class="col-md-2 col-md-offset-4">
+            <form action="/risk">
+                <input class = "btn" type="submit" value="Calculate Your Risk" style="width:70%; left:15%;position:absolute;">
+            </form>
+        </div>
+        <div class="col-md-2">
+            <form action="/index">
+                <input class = "btn" type="submit" value="Risk Factors" style="width:70%; left:15%;position:absolute;">
+            </form>
+        </div>
+    </div>
+{% endblock %}

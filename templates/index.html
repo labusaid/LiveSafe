@@ -1,0 +1,28 @@
+<link rel="stylesheet" href="/static/css/bootstrap.css" >
+
+{%  block head %}
+<h1>Your top risk factors</h1>
+    <h2>
+        <i>Learn how to lower your risks to earn the Live Safe discount.</i>
+    </h2>
+{% endblock %}
+
+{%  block body %}
+<div class="content">
+<table class="table">
+    {% for i in values %}
+    <tr>
+    <td>
+        <h3>YAH</h3>
+    </td>
+    <td>
+        <h3>{{ values[i].split()[17] }}</h3>
+    </td>
+    </tr>
+    {% endfor %}
+    <form action="/">
+        <input type="submit" class="btn" value="Home">
+    </form>
+</table>
+</div>
+{% endblock %}
