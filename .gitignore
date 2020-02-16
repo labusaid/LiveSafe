@@ -1,3 +1,7 @@
 # Project exclude paths
 /venv/
 /node_modules/
+/hassconfig/.storage/
+/hassconfig/.cloud/
+/hassconfig/home-assistant.log
+/hassconfig/home-assistant_v2.db

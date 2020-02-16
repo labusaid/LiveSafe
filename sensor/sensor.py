@@ -6,26 +6,33 @@ from time import sleep
 switch = Button(4)
 rf = Button(26)
 
-# This is the Publisher
 def switchpress():
-    client.publish("home-assistant/livesafe/switch", "switch off!")
-    print("switch")
+    client.publish("livesafe/switch", "on")
+    print("switch on")
+
+
+def switchrelease():
+    client.publish("livesafe/switch", "off")
+    print("switch off")
 
 
 def rfpress():
-    client.publish("home-assistant/livesafe/switch", "rf broken!")
-    print("rf")
+    client.publish("livesafe/door", "open")
+    print("rf open")
+
+
+def rfrelease():
+    client.publish("livesafe/door", "closed")
+    print("rf closed")
 
 
 client = mqtt.Client()
 client.connect("192.168.8.234", 1883, 60)
 
 switch.when_activated = switchpress
+switch.when_deactivated = switchrelease
 rf.when_activated = rfpress
-
-# Does the exact same as two lines above
-# switch.when_pressed = switchpress
-# rf.when_pressed = rfpress
+rf.when_deactivated = rfrelease
 
 pause()
 

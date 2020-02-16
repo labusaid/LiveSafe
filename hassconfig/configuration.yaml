@@ -22,8 +22,8 @@ mqtt:
 sensor:
   - platform: mqtt
     name: "Switch"
-    state_topic: "home-assistant/livesafe/switch"
+    state_topic: "livesafe/switch"
   - platform: mqtt
     name: "Door"
-    state_topic: "home-assistant/livesafe/door"
+    state_topic: "livesafe/door"
 
