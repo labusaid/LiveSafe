@@ -11,9 +11,9 @@ class Risk:
     riskFactors = dict()
 
     def __init__(self):
-        self.riskFactors['doorOpen'] = Factor(10000, 1)
-        self.riskFactors['windowOpen'] = Factor(10, 1)
-        self.riskFactors['smokeAlarm'] = Factor(2, 1)
+        self.riskFactors['doorOpen'] = Factor(0, 1)
+        self.riskFactors['windowOpen'] = Factor(0, 1)
+        self.riskFactors['smokeAlarm'] = Factor(0, 1)
 
     def calculateRisk(self):
         risk = 0
@@ -21,4 +21,9 @@ class Risk:
             risk += self.riskFactors[i].val*self.riskFactors[i].weight
         risk=10*(-1/(risk+1)+1)
         return risk
+
+    def set(self, timeCount, doorCount, smokeCount, windowCount):
+        self.riskFactors['doorOpen'].val = doorCount
+        self.riskFactors['windowOpen'].val = windowCount
+        self.riskFactors['smokeAlarm'].val = smokeCount
 

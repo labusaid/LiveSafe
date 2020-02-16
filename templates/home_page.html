@@ -5,10 +5,16 @@
 
 {% block content %}
     <div class = "row">
-        <img src="/static/images/Logo.png" alt="(Main Logo)" style="width:36%;position: absolute;left:32%;">
+        <img src="/static/images/Asset_1mdpi.png" alt="(Main Logo)" style="width:36%;position: absolute;left:32%;">
+    </div>
+    {% for i in range(12) %}
+    <br/>
+    {% endfor %}
+    <div class = "row">
+        <img src="/static/images/Asset_2mdpi.png" alt="(Main Logo)" style="width:10%;position: absolute;left: 45%;">
     </div>
     <div class="row">
-        {% for i in range(32) %}
+        {% for i in range(18) %}
             <br/>
         {% endfor %}
         <div class="col-md-2 col-md-offset-4">
