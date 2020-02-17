@@ -25,10 +25,6 @@ def rfrelease():
     client.publish("livesafe/door", "closed")
     print("rf closed")
 
-def switchrelease():
-    client.publish("livesafe/switch", "off")
-    print("switch off")
-
 
 def buttonpress():
     client.publish("livesafe/button", "pressed")
